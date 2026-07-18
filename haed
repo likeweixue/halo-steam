@@ -1,0 +1,1470 @@
+<style>
+/* ========================================
+   Steam 风格商店样式覆盖
+   适用于 Halo Shop 插件 v2.25.4
+   ======================================== */
+
+/* ---------- 1. 全局暗色主题 ---------- */
+.shop-entry {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #1b2838;
+  min-height: 100vh;
+}
+
+.shop-entry * {
+  box-sizing: border-box;
+}
+
+/* ---------- 2. 顶部导航栏 ---------- */
+.shop-nav {
+  background: #171a21;
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid #2a3a4a;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.shop-nav .shop-nav-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.shop-nav .shop-nav-brand span {
+  color: #66c0f4;
+}
+
+.shop-nav .shop-nav-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.shop-nav .shop-nav-links a {
+  color: #b8b6b4;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.shop-nav .shop-nav-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+.shop-nav .shop-nav-links a.active {
+  color: #fff;
+  background: rgba(102, 192, 244, 0.15);
+}
+
+.shop-nav .shop-nav-links a .badge {
+  background: #66c0f4;
+  color: #1b2838;
+  font-size: 10px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+  font-weight: 700;
+}
+
+/* ---------- 3. 页面头部 ---------- */
+.shop-entry__header {
+  padding: 0 20px 20px 20px !important;
+  margin-bottom: 10px !important;
+}
+
+.shop-entry__title {
+  color: #e5e5e5 !important;
+  font-size: 28px !important;
+  font-weight: 300 !important;
+  margin-bottom: 4px !important;
+  letter-spacing: 0.5px;
+}
+
+.shop-entry__subtitle {
+  color: #8f98a0 !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+}
+
+/* ---------- 4. 筛选栏 Steam 风格 ---------- */
+.shop-filter {
+  background: #2a3a4a !important;
+  padding: 12px 20px !important;
+  margin: 0 0 20px 0 !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  border-bottom: 1px solid #1e2d3d !important;
+}
+
+.shop-filter__left {
+  display: flex !important;
+  gap: 10px !important;
+  flex: 1 !important;
+  max-width: none !important;
+  align-items: center !important;
+}
+
+.shop-filter__right {
+  flex-shrink: 0 !important;
+}
+
+/* 筛选栏内的下拉框和输入框 */
+.shop-filter .shop-select,
+.shop-filter .shop-input {
+  background: #1b2838 !important;
+  border: 1px solid #3a4a5a !important;
+  color: #c6d4df !important;
+  border-radius: 4px !important;
+  padding: 8px 14px !important;
+  font-size: 13px !important;
+  height: 38px !important;
+  transition: border-color 0.2s;
+}
+
+.shop-filter .shop-select:hover,
+.shop-filter .shop-input:hover {
+  border-color: #66c0f4 !important;
+}
+
+.shop-filter .shop-select:focus,
+.shop-filter .shop-input:focus {
+  border-color: #66c0f4 !important;
+  box-shadow: 0 0 0 1px rgba(102, 192, 244, 0.3) !important;
+  outline: none !important;
+}
+
+.shop-filter .shop-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%238f98a0' d='M12 15.5L4.5 8l1.4-1.4L12 12.7l6.1-6.1L19.5 8z'/%3E%3C/svg%3E") !important;
+  background-position: right 10px center !important;
+  background-repeat: no-repeat !important;
+  padding-right: 32px !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  min-width: 140px !important;
+}
+
+.shop-filter__left .shop-select {
+  width: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.shop-filter__left .shop-input {
+  flex: 1 !important;
+  min-width: 150px !important;
+}
+
+.shop-filter__left .shop-input::placeholder {
+  color: #5a6a7a !important;
+}
+
+.shop-filter__right .shop-select {
+  width: 160px !important;
+}
+
+/* ---------- 5. 商品列表网格 ---------- */
+.shop-product-list {
+  padding: 0 20px 20px 20px !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  gap: 16px !important;
+}
+
+/* ---------- 6. 商品卡片 Steam 风格 ---------- */
+.shop-product-card {
+  background: #1b2838 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  transition: transform 0.15s, box-shadow 0.15s !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.shop-product-card:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+}
+
+/* 图片容器 - 16:9 比例 */
+.shop-product-card__image {
+  width: 100% !important;
+  height: 0 !important;
+  padding-bottom: 56.25% !important; /* 16:9 */
+  background: #0d1a2b !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.shop-product-card__image img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.3s !important;
+}
+
+.shop-product-card:hover .shop-product-card__image img {
+  transform: scale(1.05) !important;
+}
+
+/* 卡片信息区 */
+.shop-product-card__info {
+  padding: 12px 14px 14px !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.shop-product-card__name {
+  color: #c6d4df !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: 38px !important;
+}
+
+.shop-product-card__name:hover {
+  color: #fff !important;
+}
+
+.shop-product-card__description {
+  color: #6a7a8a !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  min-height: 18px !important;
+}
+
+.shop-product-card__footer {
+  border-top: 1px solid #2a3a4a !important;
+  padding-top: 10px !important;
+  margin-top: auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* 价格 - 绿黄色标签风格 */
+.shop-product-card__price {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.shop-product-card__price-current {
+  background: #5c7c3a !important;
+  color: #a4d007 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  padding: 2px 10px !important;
+  border-radius: 3px !important;
+  display: inline-block !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.5px;
+}
+
+.shop-product-card__price-original {
+  color: #6a7a8a !important;
+  font-size: 12px !important;
+  text-decoration: line-through !important;
+}
+
+/* ---------- 7. 分页 ---------- */
+.shop-pagination {
+  padding: 0 20px 30px 20px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.shop-pagination .shop-btn {
+  background: #2a3a4a !important;
+  border: 1px solid #3a4a5a !important;
+  color: #c6d4df !important;
+  padding: 6px 16px !important;
+  font-size: 13px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s !important;
+}
+
+.shop-pagination .shop-btn:hover:not(:disabled) {
+  background: #3a4a5a !important;
+  border-color: #66c0f4 !important;
+  color: #fff !important;
+}
+
+.shop-pagination .shop-btn:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.shop-pagination__info {
+  color: #8f98a0 !important;
+  font-size: 14px !important;
+  min-width: 50px !important;
+  text-align: center !important;
+}
+
+/* ---------- 8. 响应式调整 ---------- */
+@media (max-width: 768px) {
+  .shop-nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  
+  .shop-nav .shop-nav-links {
+    flex-wrap: wrap;
+  }
+  
+  .shop-nav .shop-nav-links a {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  
+  .shop-filter {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 12px 16px !important;
+  }
+  
+  .shop-filter__left {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .shop-filter__left .shop-select,
+  .shop-filter__left .shop-input,
+  .shop-filter__right .shop-select {
+    width: 100% !important;
+  }
+  
+  .shop-product-list {
+    padding: 0 12px 12px 12px !important;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+    gap: 12px !important;
+  }
+  
+  .shop-product-card__name {
+    font-size: 13px !important;
+  }
+  
+  .shop-product-card__price-current {
+    font-size: 14px !important;
+    padding: 2px 8px !important;
+  }
+  
+  .shop-entry__title {
+    font-size: 22px !important;
+  }
+}
+
+  /* ========================================
+   Steam 风格 - 商品详情页
+   ======================================== */
+
+/* ---------- 详情页整体布局 ---------- */
+.shop-product-detail {
+  padding: 0 20px 20px 20px !important;
+  display: flex !important;
+  gap: 30px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 20px !important;
+  align-items: flex-start !important;
+}
+
+/* 左侧图片区 - 占 2/3 */
+.shop-product-gallery {
+  flex: 2 !important;
+  min-width: 400px !important;
+  max-width: 66.666% !important;
+}
+
+/* 右侧信息区 - 占 1/3 */
+.shop-product-info {
+  flex: 1 !important;
+  min-width: 280px !important;
+  max-width: 33.333% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+/* 主图容器 - 16:9 比例，像 Steam 的横幅 */
+.product-gallery-swiper {
+  width: 100% !important;
+  aspect-ratio: 16/9 !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  background: #0d1a2b !important;
+  margin-bottom: 12px !important;
+}
+
+.product-gallery-swiper swiper-slide {
+  background: #0d1a2b !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.product-gallery-swiper swiper-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: #0d1a2b !important;
+}
+
+/* 缩略图导航 - 像 Steam 底部缩略图 */
+.product-gallery-nav-swiper {
+  max-width: 100% !important;
+  display: flex !important;
+  gap: 6px !important;
+  overflow-x: auto !important;
+  padding: 4px 0 !important;
+}
+
+.product-gallery-nav-swiper swiper-slide {
+  width: 80px !important;
+  height: 50px !important;
+  flex-shrink: 0 !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  opacity: 0.5 !important;
+  cursor: pointer !important;
+  border: 2px solid transparent !important;
+  transition: all 0.2s !important;
+  background: #1b2838 !important;
+}
+
+.product-gallery-nav-swiper swiper-slide:hover {
+  opacity: 0.8 !important;
+}
+
+.product-gallery-nav-swiper .swiper-slide-thumb-active {
+  opacity: 1 !important;
+  border-color: #66c0f4 !important;
+}
+
+.product-gallery-nav-swiper swiper-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ---------- 右侧商品信息 ---------- */
+.shop-product-info {
+  flex: 1 !important;
+  min-width: 280px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.shop-product-info__title {
+  color: #e5e5e5 !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.shop-product-info__desc {
+  color: #8f98a0 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  margin: 0 0 12px 0 !important;
+}
+
+/* ---------- 购买框 Steam 风格 ---------- */
+.buy-box {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 8px !important;
+  padding: 16px 20px !important;
+  margin-top: 8px !important;
+}
+
+.buy-box__price {
+  border-bottom: 1px solid #2a3a4a !important;
+  padding-bottom: 14px !important;
+  margin-bottom: 14px !important;
+}
+
+.buy-box__price-label {
+  color: #8f98a0 !important;
+  font-size: 13px !important;
+  margin-bottom: 4px !important;
+}
+
+.buy-box__price-value {
+  color: #a4d007 !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+}
+
+.buy-box__price-value del {
+  color: #6a7a8a !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  margin-left: 12px !important;
+}
+
+/* 数量选择器 */
+.buy-box__quantity {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 14px !important;
+}
+
+.buy-box__quantity-label {
+  color: #c6d4df !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.shop-quantity {
+  border: 1px solid #2a3a4a !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  background: #0d1a2b !important;
+}
+
+.shop-quantity__btn {
+  background: #0d1a2b !important;
+  color: #c6d4df !important;
+  width: 36px !important;
+  height: 36px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.shop-quantity__btn:hover:not(:disabled) {
+  background: #2a3a4a !important;
+}
+
+.shop-quantity__btn:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.shop-quantity__input {
+  background: #0d1a2b !important;
+  color: #c6d4df !important;
+  width: 48px !important;
+  height: 36px !important;
+  text-align: center !important;
+  border: none !important;
+  font-size: 14px !important;
+}
+
+/* 按钮 */
+.buy-box__actions {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  border-top: 1px solid #2a3a4a !important;
+  padding-top: 16px !important;
+}
+
+.buy-box__actions form {
+  flex: 1 !important;
+  min-width: 140px !important;
+}
+
+.buy-box__actions .shop-btn {
+  width: 100% !important;
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+/* 加入购物车按钮 - Steam 绿色风格 */
+.buy-box__actions .shop-btn-primary {
+  background: #5c7c3a !important;
+  color: #fff !important;
+  border: 1px solid #5c7c3a !important;
+}
+
+.buy-box__actions .shop-btn-primary:hover {
+  background: #6d8f47 !important;
+  border-color: #6d8f47 !important;
+}
+
+/* 立即购买按钮 - Steam 蓝色风格 */
+.buy-box__actions .shop-btn-secondary {
+  background: #2a3a4a !important;
+  color: #c6d4df !important;
+  border: 1px solid #3a4a5a !important;
+}
+
+.buy-box__actions .shop-btn-secondary:hover {
+  background: #3a4a5a !important;
+  border-color: #66c0f4 !important;
+  color: #fff !important;
+}
+
+/* ---------- 商品详情描述区 ---------- */
+.shop-product-content {
+  padding: 0 20px 30px 20px !important;
+  border-top: 1px solid #2a3a4a !important;
+  margin-top: 10px !important;
+}
+
+.shop-product-content__description {
+  color: #c6d4df !important;
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  max-width: 800px !important;
+}
+
+.shop-product-content__description img {
+  max-width: 100% !important;
+  border-radius: 6px !important;
+  border: 1px solid #2a3a4a !important;
+}
+
+/* ---------- 响应式适配 ---------- */
+@media (max-width: 768px) {
+  .shop-product-detail {
+    flex-direction: column !important;
+    padding: 0 12px 12px 12px !important;
+  }
+
+  .shop-product-gallery {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .shop-product-info {
+    min-width: 0 !important;
+    padding: 0 !important;
+  }
+
+  .shop-product-info__title {
+    font-size: 22px !important;
+  }
+
+  .buy-box__price-value {
+    font-size: 26px !important;
+  }
+
+  .buy-box__actions {
+    flex-direction: column !important;
+  }
+
+  .buy-box__actions form {
+    min-width: 0 !important;
+  }
+
+  .product-gallery-nav-swiper swiper-slide {
+    width: 60px !important;
+    height: 38px !important;
+  }
+
+  .shop-product-content {
+    padding: 0 12px 20px 12px !important;
+  }
+  .shop-product-gallery {
+    max-width: 100% !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .shop-product-info {
+    max-width: 100% !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+}
+
+
+/* ---------- 库存状态 ---------- */
+.buy-box__stock {
+  color: #8f98a0 !important;
+  font-size: 13px !important;
+  margin-bottom: 12px !important;
+}
+
+.buy-box__stock-value {
+  color: #5c7c3a !important;
+  font-weight: 600 !important;
+}
+/* ========================================
+   Steam 风格 - 购物车 / 结算 / 支付
+   ======================================== */
+
+/* ---------- 页面头部 ---------- */
+.shop-entry__header .shop-entry__title {
+  color: #e5e5e5 !important;
+}
+
+.shop-entry__header .shop-entry__subtitle {
+  color: #8f98a0 !important;
+}
+
+/* ---------- 卡片通用 ---------- */
+.shop-card {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 16px 20px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+
+.shop-card__title {
+  color: #e5e5e5 !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin-bottom: 14px !important;
+  border-bottom: 1px solid #2a3a4a !important;
+  padding-bottom: 10px !important;
+}
+
+/* ---------- 购物车页面 ---------- */
+.shop-cart {
+  padding: 0 20px 20px 20px !important;
+  gap: 24px !important;
+}
+
+.shop-cart__items {
+  gap: 12px !important;
+}
+
+/* 购物车商品项 */
+.shop-cart-item {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 14px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+}
+
+.shop-cart-item__image {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 4px !important;
+  object-fit: cover !important;
+  background: #0d1a2b !important;
+  flex-shrink: 0 !important;
+}
+
+.shop-cart-item__info {
+  flex: 1 !important;
+  min-width: 150px !important;
+}
+
+.shop-cart-item__name {
+  color: #c6d4df !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.shop-cart-item__name:hover {
+  color: #66c0f4 !important;
+}
+
+.shop-cart-item__price {
+  color: #a4d007 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.shop-cart-item__price-original {
+  color: #6a7a8a !important;
+  font-size: 12px !important;
+  text-decoration: line-through !important;
+  margin-left: 6px !important;
+}
+
+.shop-cart-item__total {
+  color: #a4d007 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  min-width: 60px !important;
+}
+
+.shop-cart-item__remove {
+  background: transparent !important;
+  border: 1px solid #3a4a5a !important;
+  color: #8f98a0 !important;
+  padding: 6px 14px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-size: 13px !important;
+  transition: all 0.2s !important;
+}
+
+.shop-cart-item__remove:hover {
+  border-color: #e05a5a !important;
+  color: #e05a5a !important;
+  background: rgba(224, 90, 90, 0.1) !important;
+}
+
+/* 购物车 - 数量选择器（覆盖之前的白色） */
+.shop-cart .shop-quantity {
+  background: #0d1a2b !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-shrink: 0 !important;
+}
+
+.shop-cart .shop-quantity__btn {
+  background: #0d1a2b !important;
+  color: #c6d4df !important;
+  width: 32px !important;
+  height: 32px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.shop-cart .shop-quantity__btn:hover:not(:disabled) {
+  background: #2a3a4a !important;
+}
+
+.shop-cart .shop-quantity__btn:disabled {
+  opacity: 0.3 !important;
+}
+
+.shop-cart .shop-quantity__input {
+  background: #0d1a2b !important;
+  color: #c6d4df !important;
+  width: 40px !important;
+  height: 32px !important;
+  text-align: center !important;
+  border: none !important;
+  font-size: 14px !important;
+}
+
+/* 购物车摘要 */
+.shop-cart-summary {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 20px !important;
+  position: sticky !important;
+  top: 80px !important;
+}
+
+.shop-cart-summary__row {
+  color: #c6d4df !important;
+  font-size: 14px !important;
+  padding: 6px 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.shop-cart-summary__row--total {
+  color: #a4d007 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  border-top: 1px solid #2a3a4a !important;
+  padding-top: 12px !important;
+  margin-top: 4px !important;
+}
+
+/* ---------- 结算页面 ---------- */
+.shop-checkout {
+  padding: 0 20px 20px 20px !important;
+  gap: 24px !important;
+}
+
+.shop-checkout__form {
+  gap: 16px !important;
+}
+
+/* 表单元素 - 暗色 */
+.shop-input,
+.shop-textarea {
+  background: #0d1a2b !important;
+  border: 1px solid #2a3a4a !important;
+  color: #c6d4df !important;
+  border-radius: 4px !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+}
+
+.shop-input:focus,
+.shop-textarea:focus {
+  border-color: #66c0f4 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(102, 192, 244, 0.2) !important;
+}
+
+.shop-input::placeholder,
+.shop-textarea::placeholder {
+  color: #5a6a7a !important;
+}
+
+.shop-label {
+  color: #c6d4df !important;
+  font-size: 14px !important;
+}
+
+/* 折扣码区域 */
+.shop-checkout-discount-card__controls {
+  display: flex !important;
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+.shop-checkout-discount-card__controls .shop-input {
+  flex: 1 !important;
+}
+
+.shop-checkout-discount-card__controls .shop-btn {
+  background: #2a3a4a !important;
+  border: 1px solid #3a4a5a !important;
+  color: #c6d4df !important;
+  padding: 10px 20px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+
+.shop-checkout-discount-card__controls .shop-btn:hover:not(:disabled) {
+  background: #3a4a5a !important;
+  border-color: #66c0f4 !important;
+  color: #fff !important;
+}
+
+.shop-checkout-discount-card__controls .shop-btn:disabled {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+}
+
+.shop-checkout-discount-card__tip {
+  color: #6a7a8a !important;
+  font-size: 13px !important;
+  margin-top: 8px !important;
+}
+
+/* 结算 - 商品清单 */
+.shop-order-items {
+  gap: 10px !important;
+}
+
+.shop-order-item {
+  background: #0d1a2b !important;
+  border-radius: 4px !important;
+  padding: 10px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  border-bottom: 1px solid #1e2d3d !important;
+}
+
+.shop-order-item:last-child {
+  border-bottom: none !important;
+}
+
+.shop-order-item__image {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 4px !important;
+  object-fit: cover !important;
+  background: #0d1a2b !important;
+  flex-shrink: 0 !important;
+}
+
+.shop-order-item__info {
+  flex: 1 !important;
+}
+
+.shop-order-item__name {
+  color: #c6d4df !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.shop-order-item__name:hover {
+  color: #66c0f4 !important;
+}
+
+.shop-order-item__quantity {
+  color: #6a7a8a !important;
+  font-size: 13px !important;
+}
+
+.shop-order-item__price {
+  color: #a4d007 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  flex-shrink: 0 !important;
+}
+
+/* 费用汇总 */
+.shop-order-summary__row {
+  color: #c6d4df !important;
+  font-size: 14px !important;
+  padding: 4px 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.shop-order-summary__row--total {
+  color: #a4d007 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  border-top: 1px solid #2a3a4a !important;
+  padding-top: 12px !important;
+  margin-top: 4px !important;
+}
+
+.shop-divider {
+  background: #2a3a4a !important;
+  height: 1px !important;
+  margin: 10px 0 !important;
+  border: none !important;
+}
+
+/* 结算按钮 */
+.shop-checkout__actions {
+  gap: 10px !important;
+}
+
+.shop-checkout__actions .shop-btn {
+  width: 100% !important;
+  padding: 12px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+}
+
+/* ---------- 支付页面 ---------- */
+.shop-payments {
+  padding: 0 20px 20px 20px !important;
+  gap: 24px !important;
+}
+
+.shop-payments__left {
+  gap: 16px !important;
+}
+
+.shop-payments__right {
+  gap: 16px !important;
+}
+
+/* 支付方式选择 */
+.shop-payment-methods {
+  gap: 10px !important;
+}
+
+.shop-payment-method {
+  background: #0d1a2b !important;
+  border: 2px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 12px 16px !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.shop-payment-method:hover {
+  border-color: #3a4a5a !important;
+}
+
+.shop-payment-method--active {
+  border-color: #66c0f4 !important;
+  background: #0d1a2b !important;
+}
+
+.shop-payment-method__name {
+  color: #e5e5e5 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.shop-payment-method__desc {
+  color: #6a7a8a !important;
+  font-size: 13px !important;
+}
+
+.shop-payment-method__check {
+  color: #66c0f4 !important;
+}
+
+/* 支付二维码 */
+.shop-qrcode-container {
+  padding: 10px 0 !important;
+}
+
+.shop-qrcode-wrapper {
+  background: #0d1a2b !important;
+  border: 2px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 16px !important;
+}
+
+.shop-qrcode-image {
+  border-radius: 4px !important;
+  max-width: 200px !important;
+}
+
+.shop-qrcode-tip {
+  color: #8f98a0 !important;
+  font-size: 14px !important;
+}
+
+/* 支付按钮 */
+.shop-payments__actions .shop-btn {
+  width: 100% !important;
+  padding: 12px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+}
+
+.shop-payments__actions .shop-btn-primary {
+  background: #5c7c3a !important;
+  color: #fff !important;
+  border: 1px solid #5c7c3a !important;
+}
+
+.shop-payments__actions .shop-btn-primary:hover {
+  background: #6d8f47 !important;
+  border-color: #6d8f47 !important;
+}
+
+.shop-payments__actions .shop-btn-secondary {
+  background: #2a3a4a !important;
+  color: #c6d4df !important;
+  border: 1px solid #3a4a5a !important;
+}
+
+.shop-payments__actions .shop-btn-secondary:hover {
+  background: #3a4a5a !important;
+  border-color: #66c0f4 !important;
+  color: #fff !important;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 768px) {
+  .shop-cart {
+    padding: 0 12px 12px 12px !important;
+  }
+
+  .shop-cart-item {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 12px !important;
+  }
+
+  .shop-cart-item__image {
+    width: 100% !important;
+    height: 160px !important;
+  }
+
+  .shop-cart-item__total {
+    text-align: right !important;
+  }
+
+  .shop-cart-summary {
+    position: static !important;
+  }
+
+  .shop-checkout {
+    padding: 0 12px 12px 12px !important;
+  }
+
+  .shop-checkout .shop-checkout__form {
+    flex-direction: column !important;
+  }
+
+  .shop-payments {
+    padding: 0 12px 12px 12px !important;
+    flex-direction: column !important;
+  }
+
+  .shop-payments__left,
+  .shop-payments__right {
+    width: 100% !important;
+  }
+
+  .shop-payment-methods {
+    grid-template-columns: 1fr !important;
+  }
+
+  .shop-qrcode-image {
+    max-width: 150px !important;
+  }
+
+  .shop-checkout-discount-card__controls {
+    flex-wrap: wrap !important;
+  }
+
+  .shop-checkout-discount-card__controls .shop-btn {
+    width: 100% !important;
+  }
+}
+/* ========================================
+   Steam 风格 - 卡片悬浮阴影
+   ======================================== */
+
+/* ---------- 购物车商品卡片 ---------- */
+.shop-cart-item {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 14px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  /* 阴影 - 默认轻微 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  transition: box-shadow 0.25s ease, transform 0.25s ease !important;
+}
+
+/* 购物车商品卡片 - 悬浮效果 */
+.shop-cart-item:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(-2px) !important;
+  border-color: #3a4a5a !important;
+}
+
+/* ---------- 购物车摘要卡片 ---------- */
+.shop-cart-summary {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 20px !important;
+  position: sticky !important;
+  top: 80px !important;
+  /* 阴影 - 比普通卡片重一点 */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  transition: box-shadow 0.25s ease !important;
+}
+
+.shop-cart-summary:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ---------- 商品详情页 - 购买框 ---------- */
+.buy-box {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 8px !important;
+  padding: 16px 20px !important;
+  margin-top: 8px !important;
+  /* 阴影 - 和摘要卡片一致 */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  transition: box-shadow 0.25s ease, transform 0.25s ease !important;
+}
+
+.buy-box:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ---------- 结算页 - 所有卡片 ---------- */
+.shop-checkout .shop-card {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 16px 20px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  transition: box-shadow 0.25s ease !important;
+}
+
+.shop-checkout .shop-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* ---------- 支付页 - 所有卡片 ---------- */
+.shop-payments .shop-card {
+  background: #1b2838 !important;
+  border: 1px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 16px 20px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  transition: box-shadow 0.25s ease !important;
+}
+
+.shop-payments .shop-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* ---------- 支付方式卡片 ---------- */
+.shop-payment-method {
+  background: #0d1a2b !important;
+  border: 2px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 12px 16px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.shop-payment-method:hover {
+  border-color: #3a4a5a !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+.shop-payment-method--active {
+  border-color: #66c0f4 !important;
+  background: #0d1a2b !important;
+  box-shadow: 0 4px 20px rgba(102, 192, 244, 0.15) !important;
+}
+
+/* ---------- 二维码容器 ---------- */
+.shop-qrcode-wrapper {
+  background: #0d1a2b !important;
+  border: 2px solid #2a3a4a !important;
+  border-radius: 6px !important;
+  padding: 16px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
+  transition: box-shadow 0.25s ease !important;
+}
+
+.shop-qrcode-wrapper:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ---------- 商品清单中的商品项 ---------- */
+.shop-order-item {
+  background: #0d1a2b !important;
+  border-radius: 4px !important;
+  padding: 10px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  border-bottom: 1px solid #1e2d3d !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15) !important;
+  transition: box-shadow 0.25s ease !important;
+}
+
+.shop-order-item:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ---------- 响应式 - 移动端阴影轻一点 ---------- */
+@media (max-width: 768px) {
+  .shop-cart-item {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .shop-cart-item:hover {
+    transform: none !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .buy-box:hover {
+    transform: none !important;
+  }
+
+  .shop-cart-summary {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .shop-payment-method:hover {
+    transform: none !important;
+  }
+}
+</style>
+
+<!-- ========================================
+     导航栏 HTML（注入到页面顶部）
+     放在内容前面，用 JS 插入
+     ======================================== -->
+<script>
+(function() {
+  'use strict';
+  
+  // 检查是否已插入导航
+  if (document.querySelector('.shop-nav')) return;
+  
+  // 获取 shop-entry 容器
+  var entry = document.querySelector('.shop-entry');
+  if (!entry) return;
+  
+  // 创建导航栏 HTML
+  var nav = document.createElement('nav');
+  nav.className = 'shop-nav';
+  nav.innerHTML = `
+    <a href="/shop/products" class="shop-nav-brand">
+      🎮 <span>商店</span>
+    </a>
+    <div class="shop-nav-links">
+      <a href="/shop/products" class="active">商店</a>
+      <a href="https://youmage.cn/uc/shop/orders">库 <span class="badge">我的</span></a>
+    </div>
+  `;
+  
+  // 插入到 shop-entry 最前面
+  entry.insertBefore(nav, entry.firstChild);
+})();
+// 优化商品详情页缩略图显示
+(function() {
+  'use strict';
+  
+  // 等待 Swiper 加载完成
+  setTimeout(function() {
+    var navSwiper = document.querySelector('.product-gallery-nav-swiper');
+    if (navSwiper) {
+      // 确保缩略图显示为横向滚动
+      navSwiper.style.overflow = 'hidden';
+      
+      // 让所有缩略图可见
+      var slides = navSwiper.querySelectorAll('swiper-slide');
+      slides.forEach(function(slide) {
+        slide.style.flex = '0 0 auto';
+        slide.style.width = '80px';
+        slide.style.height = '50px';
+      });
+    }
+  }, 500);
+})();
+</script>
